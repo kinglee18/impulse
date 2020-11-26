@@ -1,0 +1,17 @@
+<div>
+    <mat-card>
+        <form [formGroup]="form">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input id="email" matInput formControlName="email" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="password" id="password" matInput formControlName="password" />
+            </mat-form-field>
+    
+            <button [disabled]="!form.valid" type="button" (click)="submit()" mat-raised-button
+                color="primary">Ingresar</button>
+        </form>
+    </mat-card>
+</div>

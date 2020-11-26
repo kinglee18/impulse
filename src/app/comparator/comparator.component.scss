@@ -1,0 +1,24 @@
+form {
+    display: flex;
+    flex-direction: column;
+
+    section {
+        #add {
+            position: absolute;
+            right: 17px;
+        }
+        ul {
+            list-style: none;
+            display: inline-block;
+            margin-right: 10%;
+            width: 70%;
+            li {
+                display: block;
+                mat-form-field {
+                    margin-right: 25px;
+                    width: 70%;
+                }
+            }
+        }
+    }
+}

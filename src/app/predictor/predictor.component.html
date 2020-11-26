@@ -1,0 +1,35 @@
+<mat-card>
+    <form [formGroup]="form">
+
+
+        <mat-form-field>
+            <mat-label>Texto</mat-label>
+            <textarea formControlName="text"  matInput></textarea>
+        </mat-form-field>
+
+        <button [disabled]="!form.valid" type="button" (click)="submit()" mat-raised-button
+            color="primary">Analizar</button>
+    </form>
+    <table *ngIf="results" class="result-table" >
+        <thead>
+            <th>Resultados</th>
+            <th>Web</th>
+        </thead>
+        <tbody>
+          
+            <tr>
+                <td>Puntaje</td>
+                <td>{{ results.score}}</td>
+            </tr>
+            <tr>
+                <td>Categoria</td>
+                <td>{{ results.category }}</td>
+            </tr>
+            <tr>
+                <td>Longitud</td>
+                <td>{{ results.length}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</mat-card>

@@ -1,0 +1,27 @@
+header > nav {
+    margin: 0;
+    background: #3f51b5;
+    padding: 30px;
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        width: 80%;
+        li {
+            a {
+                text-decoration: none;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        li.active {
+            background: #8f8aab;
+            border-radius: 5px;
+            padding: 8px;
+        }
+    }
+}
+
+section {
+    padding: 4% 3%;
+}

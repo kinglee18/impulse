@@ -1,0 +1,40 @@
+<mat-card>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <mat-label>Mi Url</mat-label>
+            <input formControlName="url" matInput>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Keyword</mat-label>
+            <input formControlName="keyword" matInput>
+
+        </mat-form-field>
+
+        <section>
+            <h3>Competidores</h3>
+            <ul formArrayName="competitors">
+                <li *ngFor="let item of form.controls.competitors.controls; let i = index">
+
+                    <mat-form-field>
+                        <mat-label>Competidor {{i+1}}</mat-label>
+                        <input formControlName="url" matInput formControlName="{{i}}">
+                    </mat-form-field>
+                    <button type="button" mat-fab color="warn" title="Remove Request"
+                        (click)="onRemoveSpecialRequest(i)">
+                        <mat-icon>delete</mat-icon>
+
+
+                    </button>
+                </li>
+            </ul>
+            <button id="add" type="button" (click)="onAddSpecialRequest()" mat-raised-button color="accent">
+                Agregar url
+            </button>
+        </section>
+
+        <button [disabled]="!form.valid" type="button" (click)="onSubmitForm()" mat-raised-button
+            color="primary">Crawling</button>
+
+    </form>
+</mat-card>
