@@ -37,4 +37,31 @@
             color="primary">Crawling</button>
 
     </form>
+
+    <table  class="result-table" *ngFor="let r of results;let index=index">
+        <thead>
+            <th>Resultados</th>
+            <th>Competidor {{ index + 1}}</th>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Url</td>
+                <td>{{ r.url}}</td>
+            </tr>
+            <tr>
+                <td>Puntaje</td>
+                <td>{{ r.puntajeSentimiento}}</td>
+            </tr>
+            <tr>
+                <td>Categoria</td>
+                <td>{{ r.categoriaNivelConfianza }}</td>
+            </tr>
+            <tr>
+                <td>Longitud</td>
+                <td>{{ r.longitudTexto}}</td>
+            </tr>
+
+        </tbody>
+    </table>
 </mat-card>

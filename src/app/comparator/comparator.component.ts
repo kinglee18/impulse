@@ -9,6 +9,7 @@ import { BackendService } from '../backend.service';
 })
 export class ComparatorComponent {
   form
+  results = [];
   constructor(private http: BackendService) {
     this.form = new FormGroup({
       url: new FormControl('', [Validators.required]),
@@ -20,8 +21,11 @@ export class ComparatorComponent {
   }
 
   onSubmitForm() {
+
     this.http.compare(this.form.value).subscribe(
-      data => console.log(data),
+      (data: any[]) => {
+        this.results = data;
+      },
     );
   }
 

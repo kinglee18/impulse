@@ -26,7 +26,7 @@ export class BackendService {
     return this.http.post('/data', data);
   }
   predict(data: any) {
-    return this.http.post(`${environment.url}/analysis`, data);
+    return this.http.post(`${environment.url}/analysis`, {user: 1 ,...data});
   }
   compare(form) {
 
@@ -38,6 +38,7 @@ export class BackendService {
       }
     });
     const data = {
+      user: 1,
       keyword: form.keyword,
       webs: [
         { url: form.url, text: false, type: 'own' },
