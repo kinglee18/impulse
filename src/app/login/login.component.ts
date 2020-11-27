@@ -11,7 +11,7 @@ import { BackendService } from '../backend.service';
 export class LoginComponent implements OnInit {
 
   form =  new FormGroup({
-    email : new FormControl('', Validators.required),
+    username : new FormControl('', Validators.required),
     password : new FormControl('', Validators.required)
   })
   loginError
@@ -21,12 +21,11 @@ export class LoginComponent implements OnInit {
   }
 
   submit(){
-    this.router.navigate(["/predictor"]);
-
-/*      this.back
+     this.back
       .login(this.form.getRawValue())
       .subscribe(
         data => {
+          this.back.saveToken(data['access_token']);
           this.loginError = false;
           this.router.navigate(["/predictor"]);
         },
@@ -37,6 +36,6 @@ export class LoginComponent implements OnInit {
             alert("Intente mas tarde");
           }
         }
-      ); */
+      );
   }
 }

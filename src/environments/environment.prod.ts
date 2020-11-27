@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'http://private-anon-c657dd2216-seoimpulse.apiary-mock.com'
+  url: 'http://35.223.228.136'
 };

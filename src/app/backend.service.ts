@@ -9,8 +9,17 @@ export class BackendService {
 
   constructor(private http: HttpClient) { }
 
+  saveToken(token: string){
+    localStorage.setItem('token', JSON.stringify({token}));
+  }
+
+  getToken(){
+    const token = localStorage.getItem('token');
+    return token ? JSON.parse(token).token : null;
+  }
+
   login(data) {
-    return this.http.post('/login', data);
+    return this.http.post(`${environment.url}/auth`, data);
   }
 
   sendContent(data) {

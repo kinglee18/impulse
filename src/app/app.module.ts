@@ -12,11 +12,13 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button'
 import { MatTableModule } from '@angular/material/table'
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PredictorComponent } from './predictor/predictor.component';
 import { ComparatorComponent } from './comparator/comparator.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RequestInterceptor } from './request.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatIconModule,
     MatTableModule
   ],
-  providers: [BackendService],
+  providers: [BackendService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
