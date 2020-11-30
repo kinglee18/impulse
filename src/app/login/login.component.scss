@@ -9,3 +9,38 @@ div{
         flex-direction: column;
     }
 }
+
+header > nav {
+    margin: 0;
+    background: #3f51b5;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    color: white;
+    h1{
+        display: inline;
+        flex-grow: 1;
+    }
+    ul {
+        display: flex;
+        list-style: none;
+        flex-grow: 2;
+        justify-content: space-evenly;
+        li {
+            a {
+                text-decoration: none;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        li.active {
+            background: #8f8aab;
+            border-radius: 5px;
+            padding: 8px;
+        }
+    }
+}
+
+section {
+    padding: 4% 3%;
+}

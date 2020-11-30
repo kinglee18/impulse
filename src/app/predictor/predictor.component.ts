@@ -11,7 +11,7 @@ export class PredictorComponent {
 
   results
   form =  new FormGroup({
-    text : new FormControl('', Validators.required)
+    text : new FormControl('', [Validators.required ,Validators.minLength(25)])
   })
   constructor(private back: BackendService) { }
 

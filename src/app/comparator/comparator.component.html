@@ -41,7 +41,11 @@
     <table  class="result-table" *ngFor="let r of results;let index=index">
         <thead>
             <th>Resultados</th>
-            <th>Competidor {{ index + 1}}</th>
+            <th *ngIf="form.controls['url'].value !== r.url; else loggedOut" >Competidor {{ index}}</th>
+            <ng-template #loggedOut>
+                <th #loggedOut >Mi url</th>
+
+              </ng-template>
         </thead>
         <tbody>
 

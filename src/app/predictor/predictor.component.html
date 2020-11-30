@@ -4,9 +4,10 @@
 
         <mat-form-field>
             <mat-label>Texto</mat-label>
-            <textarea formControlName="text"  matInput></textarea>
-        </mat-form-field>
+            <textarea #text  rows="20" cols="100" formControlName="text"  matInput></textarea>
+        <mat-hint align="end">{{text.value.length}} / 25</mat-hint>
 
+        </mat-form-field>
         <button [disabled]="!form.valid" type="button" (click)="submit()" mat-raised-button
             color="primary">Analizar</button>
     </form>

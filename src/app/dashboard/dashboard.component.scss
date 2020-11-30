@@ -1,12 +1,19 @@
 header > nav {
     margin: 0;
     background: #3f51b5;
-    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    color: white;
+    h1{
+        display: inline;
+        flex-grow: 1;
+    }
     ul {
         display: flex;
-        justify-content: space-around;
         list-style: none;
-        width: 80%;
+        flex-grow: 2;
+        justify-content: space-evenly;
         li {
             a {
                 text-decoration: none;
